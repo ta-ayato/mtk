@@ -35,3 +35,4 @@ outbyte_retry:
 	* 退避したレジスタ (%d0-%d3) を復元して呼び出し元へ戻る
 	movem.l	(%sp)+, %d0-%d3/%a0
 	rts
+    
