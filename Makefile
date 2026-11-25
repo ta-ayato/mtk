@@ -4,7 +4,7 @@
 ### $Id: Makefile,v 1.1.1.1 2001/04/08 06:29:47 nom Exp $
 ################################################################
 
-LIB_JIKKEN=/usr/local/lib/soft-jikken
+LIB_JIKKEN=~/.local/lib/soft-jikken
 
 default:
 	@echo '###################################################'
