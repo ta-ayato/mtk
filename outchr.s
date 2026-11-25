@@ -19,7 +19,8 @@ outbyte:
 	movem.l	%d0-%d3, -(%sp)
 
 	* 出力対象の1バイトを指すアドレスを %d2 にセット
-	lea	23(%sp), %d2 * レジスタ退避(4 * 4) + 引数位置4 + baseからのバイト3 = 23
+	lea	23(%sp), %d2 
+    * レジスタ退避(4 * 4) + 引数位置4 + baseからのバイト3 = 23
 
 outbyte_retry:
 	move.l	#2, %d0                 | システムコール番号 2 = PUTSTRING
