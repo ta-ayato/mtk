@@ -27,11 +27,6 @@ outbyte_retry:
 	move.l	#1, %d3                 | 出力文字数 = 1
 	trap	#0                      | PUTSTRING システムコール呼び出し
 
-
-
-
-
-
 	* 1文字送信できたか確認 (戻り値 %d0.L == 1 で完了、それ以外はリトライ)
 	cmpi.l	#1, %d0
 	bne	outbyte_retry
