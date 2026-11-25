@@ -22,10 +22,15 @@ outbyte:
 	lea	23(%sp), %d2 * レジスタ退避(4 * 4) + 引数位置4 + baseからのバイト3 = 23
 
 outbyte_retry:
-	move.l	#2, %d0                 * システムコール番号 2 = PUTSTRING
-	move.l	#0, %d1                 * ch = 0 (UART1)
-	move.l	#1, %d3                 * 出力文字数 = 1
-	trap	#0                      * PUTSTRING システムコール呼び出し
+	move.l	#2, %d0                 | システムコール番号 2 = PUTSTRING
+	move.l	#0, %d1                 | ch = 0 (UART1)
+	move.l	#1, %d3                 | 出力文字数 = 1
+	trap	#0                      | PUTSTRING システムコール呼び出し
+
+
+
+
+
 
 	* 1文字送信できたか確認 (戻り値 %d0.L == 1 で完了、それ以外はリトライ)
 	cmpi.l	#1, %d0
