@@ -171,7 +171,7 @@ boot:
 	move.l	#0xff3ff9, IMR	| [レビュー: 松岡] bit1 (タイマ1) と bit2 (UART1) を 0 にしてマスクを解除
 	move.w	#0x2000, %SR	| [レビュー: 松岡] スーパーバイザのまま走行レベルを 0 に下げ，割り込みを受け付ける
 
-	jmp start						* crt0.sの処理継続に戻る
+	jmp start						** crt0.sの処理継続に戻る
 	**bra	MAIN                    | ユーザプログラム / テストプログラムへ
 
 | ======== end os_init.s ========
